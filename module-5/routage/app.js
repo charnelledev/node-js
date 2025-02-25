@@ -17,8 +17,8 @@ const server = http.createServer((req,res) =>{
         res.writeHead(200,{'content-type':'text/plain'});
         res.end('a propos'); 
     }else {
-        res.writeHead(404,{'content-type':'text/plain; utf-8'});
-        res.end('page non trouvee'); 
+        res.writeHead(404,{'content-type':'text/html; utf-8'});
+        res.end("<h1 style=' color: red;'>page non trouver<?h1>"); 
     }
     
     // res.writeHead(200,{'content-type':'text/plain'});
