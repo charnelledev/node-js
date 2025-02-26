@@ -1,9 +1,29 @@
 import express from 'express';
 const port = 3001;
+const app =   express();
+import postRoutes from './routes/post.routes.js';
 
-const app =  new express();
+// app.get('/post',(req,res) =>{
+//     res.json({
+//         message: 'home page'
+//     });
+// });
+
+ app.use(express.json());
+
+ app.use('/' ,postRoutes)
+ app.use('/post',postRoutes);
+
+ 
 
 
+app.get('/post',(req,res) =>{
+    res.json({
+        id:1,
+        title:'mon premier post',
+        content:'contenu du premier post'
+    })
+})
 //lancer le server
 
 app.listen(port, () =>{
