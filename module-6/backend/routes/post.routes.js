@@ -11,7 +11,7 @@ router.post('/',(req,res) => {
 
 
 
-router.delete('/post',(req,res)=>{
+router.delete('/post/:id',(req,res)=>{
     res.json({
         message:'post suprimer avec success :'
     }) 
@@ -25,9 +25,14 @@ router.put('/:id',(req,res)=>{
 });
 
 
-router.get('/post/:id',(req,res)=>{
+router.get('/',(req,res)=>{
     res.json({
-        message:'message suprimer'+ req.params.id,
+        message:'message suprimer',
+    })
+})
+router.patch('/like-post/:id',(req,res)=>{
+    res.json({
+        message:'message suprimer',
     })
 })
 

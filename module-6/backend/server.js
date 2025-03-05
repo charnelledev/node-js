@@ -15,7 +15,9 @@ app.use(express.urlencoded({extended:false}))
 
  app.use(express.json());
 
+ app.use('/' ,postRoutes)
  app.use('/post' ,postRoutes)
+ app.use('/:id',postRoutes);
  app.use('/post/:id',postRoutes);
  app.use('/like-post/:id',postRoutes);
 
