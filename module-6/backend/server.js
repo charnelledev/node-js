@@ -9,21 +9,26 @@ import postRoutes from './routes/post.routes.js';
 //     });
 // });
 
+
+app.use(express.urlencoded({extended:false}))
+
+
  app.use(express.json());
 
- app.use('/' ,postRoutes)
- app.use('/post',postRoutes);
+ app.use('/post' ,postRoutes)
+ app.use('/post/:id',postRoutes);
+ app.use('/like-post/:id',postRoutes);
 
  
 
 
-app.get('/post',(req,res) =>{
-    res.json({
-        id:1,
-        title:'mon premier post',
-        content:'contenu du premier post'
-    })
-})
+// app.get('/post',(req,res) =>{
+//     res.json({
+//         id:1,
+//         title:'mon premier post',
+//         content:'contenu du premier post'
+//     })
+// })
 //lancer le server
 
 app.listen(port, () =>{
