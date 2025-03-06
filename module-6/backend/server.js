@@ -1,4 +1,7 @@
 import express from 'express';
+import connectDB from './config/database.js';
+import dotenv from'dotenv';
+dotenv.config();
 const port = 3001;
 const app =   express();
 import postRoutes from './routes/post.routes.js';
@@ -37,3 +40,4 @@ app.listen(port, () =>{
     console.log(`serveur demarre sur le port ${port} avec succes ok`);
     
 });
+connectDB();
